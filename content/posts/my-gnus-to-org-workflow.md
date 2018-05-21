@@ -18,7 +18,7 @@ As a project starts to grow more and more complex communication-wise, we can not
 
 First, we need to add the following lines to our **`~/.emacs`** file. In this example we use the FastMail IMAP server.
 
-{{< highlight emacs-lisp >}}
+```emacs-lisp
 (setq epa-pinentry-mode 'loopback)  ; this one is critical, actually
 
 (setq gnus-select-method
@@ -26,19 +26,19 @@ First, we need to add the following lines to our **`~/.emacs`** file. In this ex
                (nnimap-address "imap.fastmail.com")
                (nnimap-server-port "imaps")
                (nnimap-stream ssl)))
-{{< /highlight >}}
+```
 
 As you can notice we do not specify our credentials here, which is good since we will be using an encrypted file to store them. Before creating said file (which will actually hold our username and password) we must generate the GPG secret that will allow us to perform the encryption.
 
-{{< highlight shell >}}
+```shell
 $ gpg --gen-key
-{{< /highlight >}}
+```
 
 That's all the time we'll be spending in the terminal. Head back to emacs and visit the file named **`~/.authinfo.gpg`** and write the following line.
 
-{{< highlight shell >}}
+```shell
 machine imap.fastmail.com login <USER> password <APP-PASSWORD> port imaps
-{{< /highlight >}}
+```
 
 Save the file and in the popup window select the secret we just created to perform the encryption.
 
@@ -110,14 +110,14 @@ I was about to give up on this, until I decided to scroll down on the [template 
 
 Here's an example on how you could create a simple template using the full link to the email (%l) and the subject (%:subject) to generate a nice TODO entry.
 
-{{< highlight emacs-lisp >}}
+```emacs-lisp
 (org-capture-templates
    (quote
     (("t" "Todo")
      ("tm" "Mail" entry
       (file+headline "~/Dropbox/Private/ORG/inbox.org" "INBOX")
       "* TODO [[%l][%:subject]]"))))
-{{< /highlight >}}
+```
 
 
 ## Conclusion {#conclusion}

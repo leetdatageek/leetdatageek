@@ -1,6 +1,5 @@
 #+STARTUP: align indent hidestars logdone
 #+SEQ_TODO: TODO(t) | DONE(d)
-#+HUGO_CODE_FENCE: nil
 #+HUGO_BASE_DIR: .
 #+hugo_front_matter_format: yaml
 #+AUTHOR: myself
