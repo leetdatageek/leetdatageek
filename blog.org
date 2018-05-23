@@ -1,13 +1,14 @@
 #+STARTUP: align indent hidestars logdone
 #+SEQ_TODO: TODO(t) | DONE(d)
 #+HUGO_BASE_DIR: .
-#+hugo_front_matter_format: yaml
+#+hugo_front_matter_format: toml
 #+AUTHOR: myself
 
 * HOME
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: 
 :EXPORT_FILE_NAME: _index
+:EXPORT_HUGO_TYPE: homepage
 :EXPORT_HUGO_MENU: :menu "main"
 :END:
 ** Welcome, mortals.
@@ -21,18 +22,20 @@
 :EXPORT_HUGO_MENU: :menu "main"
 :END:
 My (hopefully not) ramblings.
-** DONE HUGO date problems. TL;DR: switch to YAML                   :@emacs:
-CLOSED: [2018-05-20 Sun 22:51]
+** DONE HUGO date problems. TL;DR: update your HUGO binary          :@emacs:
+CLOSED: [2018-05-23 Wed 20:53]
 :PROPERTIES:
 :EXPORT_FILE_NAME: hugo-toml-date-problem
 :END:
 *** Introduction
-I was having tons of trouble exporting my blog. The date format used by ox-hugo was not recognized by the TOML parser. Who would have guessed that using other tool would do the trick.
+I was having tons of trouble exporting my blog. The date format used by ox-hugo was not recognized by the TOML parser. Who would have guessed that using +other tool+ *an up do date HUGO binary* would do the trick.
 *** Procedure
-It's as easy as adding *=#+hugo_front_matter_format: yaml=* to the beginning of the file.
+Fedora -- which is my distro at the time of writing this post -- makes available through the stable repo an older HUGO binary (v37) which apparently carries along [[https://github.com/gohugoio/hugo/issues/2100][this issue]]. Go ahead and grab the proper executable from [[https://github.com/gohugoio/hugo/releases][the HUGO releases page]] and place it within your path after removing the one you got through dnf/yum.
+Previously I could avoid the TOML date parsing issue by choosing YAML explicitly by placing *=#+hugo_front_matter_format: yaml=* at the beginning of the file.
 *** Conclusion
-Sometimes the small things matter. Keep this little snippet in high regard.
+Keep your stuff up to date specially if somebody had the same problem a long time ago. It may have already been properly addressed.
 *** Credits
+A *HUGE* shoutout to [[https://github.com/kaushalmodi][kaushalmodi]] for taking the time to assist me on this matter by [[https://github.com/leetdatageek/leetdatageek/issues/1][reaching out to me]]. I really appreciate it!
 - [[https://ox-hugo.scripter.co/test/singles/post-yaml/][ox-hugo post-yaml test site]]
 
 ** DONE My (Bare-bones) Gnus to Org workflow                        :@emacs:

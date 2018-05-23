@@ -1,10 +1,10 @@
----
-title: "My (Bare-bones) Gnus to Org workflow"
-author: ["myself"]
-date: 2018-05-20T22:36:00-03:00
-categories: ["emacs"]
-draft: false
----
++++
+title = "My (Bare-bones) Gnus to Org workflow"
+author = ["myself"]
+date = 2018-05-20T22:36:00-03:00
+categories = ["emacs"]
+draft = false
++++
 
 ## Introduction {#introduction}
 

@@ -1,5 +1,5 @@
 baseURL = "https://leetdatageek.github.io/"
 languageCode = "en-us"
 title = "leetdatageek"
-theme = "hugo-classic"
+theme = "minimo"
 googleAnalytics = "UA-119550604-1"
